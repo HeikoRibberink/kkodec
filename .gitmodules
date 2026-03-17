@@ -1,0 +1,6 @@
+[submodule "include/hlib"]
+	path = include/hlib
+	url = git@github.com:HeikoRibberink/koka-hlib.git
+[submodule "include/community-std"]
+	path = include/community-std
+	url = git@github.com:koka-community/std.git

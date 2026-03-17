@@ -1,7 +1,5 @@
 module show
 
-import std/test/test
-
 pub import kkodec/serialize
 
 pub fun serializer(serialized : serialized) : div string
