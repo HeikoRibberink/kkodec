@@ -21,7 +21,7 @@ This repo is structured as follows:
 
   These first two are all you need generally; the following are just extra goodies that show off the framework:
 
-  - formats/ - a few example (de)serialization formats, and a general. 
+  - formats/ - a few example (de)serialization formats.
   - tools/ - a showcase of the power of this framework. 
 
   Interestingly, deserialization is powerful enough to *inspect* a datastructure generally, which allows you to do a lot of fun stuff, such as:
