@@ -2,12 +2,15 @@ module json
 
 pub import std/data/json
 
+pub import kkodec/kkodec
 pub import kkodec/serialize
 pub import kkodec/deserialize
 
 import std/core/undiv
 
 import hlib/ext/list
+
+pub val kkodec : kkodec<json,total,pure> = Kkodec(json, dejson)
 
 pub fun json(serialized : serialized) : json
   match serialized

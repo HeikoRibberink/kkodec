@@ -4,6 +4,7 @@ pub import std/core/bytes
 pub import std/num/int32
 pub import std/num/int64
 
+pub import kkodec/kkodec
 pub import kkodec/serialize
 pub import kkodec/deserialize
 
@@ -15,6 +16,8 @@ import hlib/ext/bslice
 import hlib/ext/bytes
 import hlib/ext/int64
 import hlib/patterns/generator
+
+pub val kkodec : kkodec<bytes,total,pure> = Kkodec(compact, decompact)
 
 fun fold-to-compact(serialized : serialized, bytesb : bytesb) : bytesb
   match serialized

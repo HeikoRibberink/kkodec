@@ -20,15 +20,20 @@ This repo is structured as follows:
 
   - deserialize.kk - the framework for deserialization
   - serialize.kk - the intermediate format for serialization
+  - kkodec.kk - imports both of the above and provides an interface that
+    (de)serializers (codecs!) should implement.
 
-  These first two are all you need generally; the following are just extra goodies that show off the framework:
+  These first two are all you need generally; the following are just extra
+  goodies that show off the framework:
 
   - formats/ - a few example (de)serialization formats.
   - tools/ - a showcase of the power of this framework. 
 
-  Interestingly, deserialization is powerful enough to *inspect* a datastructure generally, which allows you to do a lot of fun stuff, such as:
+  Interestingly, deserialization is powerful enough to *inspect* a
+  datastructure generally, which allows you to do a lot of fun stuff, such as:
 
-  - tools/random.kk - a deserializer that can create arbitrary random instances of a deserializable data structure.
+  - tools/random.kk - a deserializer that can create arbitrary random instances
+    of a deserializable data structure; great for fuzzy testing!
 
 # Requirements
 

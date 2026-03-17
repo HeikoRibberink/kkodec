@@ -4,8 +4,8 @@ import kkodec/serialize
 import kkodec/deserialize
 import kkodec/formats/bin
 import kkodec/formats/json
-import kkodec/formats/show
 import kkodec/tools/random
+import kkodec/tools/show
 
 import hlib/ext/bytes
 
