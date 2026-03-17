@@ -3,11 +3,30 @@
 KKodec is a framework for serializing and deserializing Koka data structures.
 
 Anything using KKodec is either:
+
 - A Koka data structure that knows how to serialize or deserialize itself,
 - A data format that knows how to serialize or deserialize other things.
 
 KKodec sits between these two objects, providing an interface that allows any
 data structure to serialized and deserialized using any supported data format.
+
+# Structure
+
+This repo is structured as follows:
+
+- kkodec/
+
+  - deserialize.kk - the framework for deserialization
+  - serialize.kk - the intermediate format for serialization
+
+  These first two are all you need generally; the following are just extra goodies that show off the framework:
+
+  - formats/ - a few example (de)serialization formats, and a general. 
+  - tools/ - a showcase of the power of this framework. 
+
+  Interestingly, deserialization is powerful enough to *inspect* a datastructure generally, which allows you to do a lot of fun stuff, such as:
+
+  - tools/random.kk - a deserializer that can create arbitrary random instances of a deserializable data structure.
 
 # Requirements
 
@@ -27,6 +46,9 @@ If you wish to use the example formats, you need to do the following:
 
 
 # Installing
+
+First read [Requirements](#Requirements); you may need to install this library
+differently for your purposes!
 
 The easiest way to use this library is to add it as a git submodule:
 ```bash
