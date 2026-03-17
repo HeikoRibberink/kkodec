@@ -2,6 +2,8 @@
 
 KKodec is a framework for serializing and deserializing Koka data structures.
 
+**🚧 KKodec is WIP and breaking changes will happen frequently! 🚧**
+
 Anything using KKodec is either:
 
 - A Koka data structure that knows how to serialize or deserialize itself,
