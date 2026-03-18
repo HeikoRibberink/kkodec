@@ -14,7 +14,6 @@ import hlib/ds/bytesb
 import hlib/ext/bslice
 import hlib/ext/bytes
 import hlib/ext/int64
-import hlib/patterns/generator
 
 pub val kkodec : kkodec<bytes,total,pure> = Kkodec(compact, decompact)
 
