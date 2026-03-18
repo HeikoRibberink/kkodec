@@ -1,9 +1,7 @@
 import std/num/int64
 
+import hlib/ds/bytesb
 import hlib/ext/int64
-
-import kkodec/data/bytesb
-
 
 fun main()
   // This examples shows that `string.bytes` is not a one-to-one

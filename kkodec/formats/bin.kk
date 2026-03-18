@@ -10,8 +10,7 @@ pub import kkodec/deserialize
 
 import std/core/undiv
 
-import kkodec/ds/bytesb
-
+import hlib/ds/bytesb
 import hlib/ext/bslice
 import hlib/ext/bytes
 import hlib/ext/int64
