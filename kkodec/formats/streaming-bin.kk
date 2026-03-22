@@ -15,7 +15,7 @@ pub effect ctl write-bytes(bytes : bytes) : ()
 
 pub effect ctl read-bytes(len : ssize_t) : bytes
 
-pub val kkodec : kkodec<(),<write-bytes>,<pure,read-bytes>> = Kkodec(bin, fn((), ?deserialize) {debin(deserialize)})
+pub val kkodec : forall<e,f> kkodec<(),<write-bytes|e>,<pure,read-bytes|f>> = Kkodec(bin, fn((), ?deserialize) {debin(deserialize)})
 
 pub fun write-int64(i : int64) : write-bytes ()
   bytes/alloc(8.ssize_t).write-bytes

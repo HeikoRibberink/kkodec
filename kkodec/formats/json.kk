@@ -10,7 +10,7 @@ import std/core/undiv
 
 import hlib/ext/list
 
-pub val kkodec : kkodec<json,total,pure> = Kkodec(json, dejson)
+pub val kkodec : forall<e,f> kkodec<json,<total|e>,<pure|f>> = Kkodec(json, dejson)
 
 pub fun json(serialized : serialized) : json
   match serialized

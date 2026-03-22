@@ -15,7 +15,7 @@ import hlib/ext/bslice
 import hlib/ext/bytes
 import hlib/ext/int64
 
-pub val kkodec : kkodec<bytes,total,pure> = Kkodec(compact, decompact)
+pub val kkodec : forall<e,f> kkodec<bytes,e,<pure|f>> = Kkodec(compact, decompact)
 
 fun fold-to-compact(serialized : serialized, bytesb : bytesb) : bytesb
   match serialized
