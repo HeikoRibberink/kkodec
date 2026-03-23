@@ -2,14 +2,13 @@ module streaming-bin
 
 import kkodec/kkodec
 import kkodec/formats/bin
-
-import std/core/undiv
-
 import hlib/ds/bytesb
+import hlib/patterns/common
 import hlib/ext/bslice
 import hlib/ext/bytes
 import hlib/ext/int64
 import hlib/ext/ssize-t
+import std/core/undiv
 
 pub effect ctl write-bytes(bytes : bytes) : ()
 
@@ -18,7 +17,7 @@ pub effect ctl read-bytes(len : ssize_t) : bytes
 pub val kkodec : forall<e,f> kkodec<(),<write-bytes|e>,<pure,read-bytes|f>> = Kkodec(bin, fn((), ?deserialize) {debin(deserialize)})
 
 pub fun write-int64(i : int64) : write-bytes ()
-  bytes/alloc(8.ssize_t).write-bytes
+  bytes/alloc(8.ssize_t).int64/set(0.ssize_t, i).write-bytes
 
 pub fun bin(serialized : serialized) : write-bytes ()
   match serialized
@@ -42,7 +41,7 @@ pub fun debin(?deserialize : () -> <deserialize,pure> a) : <pure,read-bytes> a
   handle(deserialize)
     fun deserialize-type(_name, variants : list<string>)
       val i = read-int64()
-      variants[i.int].unjust
+      variants[i.int].expect("Invalid variant " ++ show(i))
     fun deserialize-field(_name, field-deserializer)
       debin(field-deserializer)
     fun deserialize-sequence(elem-deserializer)
