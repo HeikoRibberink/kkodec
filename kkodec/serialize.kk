@@ -22,5 +22,9 @@ pub fun tuple2/serialize(tup : (a, b), ^?a/serialize : a -> serialized, ^?b/seri
     field("1", b)
   ])
 
+pub fun unit/serialize(()) : pure serialized
+  Variant("unit", 0, [])
+
 pub fun list/serialize(list : list<a>, ?serialize : a -> serialized) : serialized
   Sequence(list.map(serialize))
+

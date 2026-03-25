@@ -23,3 +23,5 @@ pub fun tuple2/deserialize(?a/deserialize : () -> <deserialize,pure> a, ?b/deser
   match deserialize-type("tuple2", [""])
     "" -> (field("0"), field("1"))
   
+pub fun unit/deserialize()
+  deserialize-type("unit", [""]).ignore
